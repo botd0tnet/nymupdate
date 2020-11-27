@@ -31,10 +31,10 @@ if [ ! -f nym-mixnode_linux_x86_64 ] || [ "$(./nym-mixnode_linux_x86_64 --versio
        if systemctl list-units --state=running | grep nym-mixnode
           then echo "stopping nym-mixnode.service to update the node ..." && systemctl stop nym-mixnode
     	         sudo rm /home/nym/nym-mixnode_linux_x86_64
-		           sudo -u nym wget https://github.com/nymtech/nym/releases/download/v0.9.1/nym-mixnode_linux_x86_64
+		           sudo -u nym wget https://github.com/nymtech/nym/releases/download/v0.9.2/nym-mixnode_linux_x86_64
           else echo " nym-mixnode.service is inactive or not existing. Downloading new binaries ..."
 	  	         sudo rm /home/nym/nym-mixnode_linux_x86_64
-		           sudo -u nym wget https://github.com/nymtech/nym/releases/download/v0.9.1/nym-mixnode_linux_x86_64
+		           sudo -u nym wget https://github.com/nymtech/nym/releases/download/v0.9.2/nym-mixnode_linux_x86_64
 	        fi		
 # Make it executable
    sudo -u nym chmod +x ./nym-mixnode_linux_x86_64 && chown nym:nym ./nym-mixnode_linux_x86_64 
